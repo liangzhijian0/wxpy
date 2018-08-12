@@ -10,6 +10,7 @@ from threading import Timer
 from wxpy import *
 import requests
 
+
 bot = Bot() 
 
 def get_news(): 
@@ -25,13 +26,13 @@ def send_news():
      contents = get_news() 
 
    # 你朋友的微信名称，不是备注，也不是微信帐号。
-
+    
      my_friend = bot.friends().search(u'A,bb')[0]
      my_friend.send(contents[0])
      my_friend.send(contents[1])
      my_friend.send(u"Have a good one!") 
      # 每86400秒（1天），发送1次
-     t = Timer(10, send_news)
+     t = Timer(1000, send_news)
      t.start()
    except:
 
