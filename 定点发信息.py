@@ -17,7 +17,7 @@ def DeltaSeconds():
     SECONDS_PER_DAY = 24 * 60 * 60
     
     curTime = datetime.now()
-    desTime = curTime.replace(hour=17, minute=51, second=0, microsecond=0)  #这里添加时间
+    desTime = curTime.replace(hour=17, minute=56, second=0, microsecond=0)  #这里添加时间
     delta = desTime - curTime
     skipSeconds = delta.total_seconds() % SECONDS_PER_DAY
     print ("Must sleep %d seconds" % skipSeconds)
@@ -31,7 +31,8 @@ while True:
     
     try:
         #需要发送的微信号    
-        my_friend = bot.friends().search(u'A,bb')[0]
+        #my_friend = bot.friends().search(u'蛋酥超人')[0]
+        wxpy_groups = bot.groups().search('这么多年的兄弟', ['杜学安'])
          
         def showmsg(js):
             #显示时间
